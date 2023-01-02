@@ -1,0 +1,51 @@
+dataset_dir: ./train_data
+test_dir: ./test_data
+pre_data_dir: ./pre_data
+model_dir: ./model
+result_dir: ./result
+result_file: result.csv
+machines:
+  - ToyCar
+  - ToyConveyor
+  - fan
+  - pump
+  - slider
+  - valve
+
+seed: 2022
+
+aug_orig: 1
+aug_mixup: 0
+aug_seg: 0
+
+# WaveNet / ResNet50 / MTL_class / MRWN / MRSWN / MTL_seg / MTL_class_seg
+training_mode: MTL_class_seg
+
+version: MTL class seg (ResNet18, filer 8, label smoothing 0.1)
+
+sr: 16000
+n_fft: 2048
+win_length: 2048
+hop_length: 512
+n_mels: 128
+frames: 313
+power: 2.0
+
+batch_size: 32
+epochs: 400
+early_stop: 50
+lr: 1e-3
+device_ids:
+#  - 0
+#  - 1
+#  - 2
+#  - 3
+#  - 4
+#  - 5
+  - 6
+#  - 7
+
+channel_mul: 6
+n_blocks: 5
+n_groups: 4
+kernel_size: 3
